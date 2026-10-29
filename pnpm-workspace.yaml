@@ -1,0 +1,8 @@
+# pnpm 在本机 Windows 沙箱下使用隔离布局会崩栈
+# （ERR_PNPM_SYMLINK_FAILED [symlinkAllModules] Maximum call stack size exceeded），
+# 因此固定为扁平布局。本文件入库，保证 CI 与本地一致。
+nodeLinker: hoisted
+
+# 把内容寻址 store 钉在项目内：默认会落到盘符根的 E:\.pnpm-store，
+# 与已有 node_modules 的链接来源不一致会迫使整棵树重装。该目录已 gitignore。
+storeDir: .pnpm-store

@@ -1,0 +1,22 @@
+# 行尾规范化。
+#
+# 为什么必须有这个文件：本仓库有**逐字节比对**的漂移门禁（`pnpm dict:check` 的三条链），
+# 它们对 data/ 与 public/dict/ 下的文件算哈希。Windows 上 `core.autocrlf=true`（默认）会把
+# 检出时的每一行都转成 CRLF，字节数随之改变，门禁立刻报 drift——实测在干净检出上
+# `build-phonetics.ts --check` 报 `drift: 1`、退出码 1，而内容其实一字未改。
+#
+# 所以：**这些文件在仓库里与磁盘上都必须保持 LF，不能被转换**。
+# 用 `-text` 明确关掉转换（而不是依赖 autocrlf 的启发式判断）。
+
+# 默认：文本文件统一按 LF 入库，检出时不转换
+* text=auto eol=lf
+
+# 数据与产物必须逐字节稳定：关掉一切转换
+*.tsv -text whitespace=-trailing-space
+*.dict -text
+*.json -text
+*.txt -text
+
+# Windows 上要双击运行的脚本保留 CRLF（目前没有，先占位说明意图）
+*.bat text eol=crlf
+*.cmd text eol=crlf

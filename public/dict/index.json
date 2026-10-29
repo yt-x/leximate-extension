@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "generatedAt": "2026-10-28T14:37:47.488Z",
+  "count": 3004,
+  "shards": [
+    {
+      "name": "core",
+      "file": "shard-core.json",
+      "count": 3004,
+      "bytes": 342511
+    }
+  ]
+}

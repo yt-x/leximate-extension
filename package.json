@@ -1,0 +1,40 @@
+{
+  "name": "leximate",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome/Edge MV3 vocabulary notebook with a bundled offline dictionary: select a word, keep it and its sentence, locally.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node scripts/build-dict.ts && node scripts/build-inflections.ts && wxt",
+    "build": "node scripts/build-dict.ts && node scripts/build-inflections.ts && wxt build",
+    "zip": "node scripts/build-dict.ts && node scripts/build-inflections.ts && wxt zip",
+    "dict": "node scripts/build-phonetics.ts && node scripts/build-dict.ts && node scripts/build-inflections.ts",
+    "dict:pron": "node scripts/build-phonetics.ts",
+    "dict:inflect:fetch": "node scripts/fetch-inflections.ts",
+    "dict:check": "node scripts/build-phonetics.ts --check && node scripts/build-dict.ts --check && node scripts/build-inflections.ts --check",
+    "boundary:check": "node scripts/check-content-boundary.ts",
+    "verify": "node scripts/build-phonetics.ts --check && node scripts/build-dict.ts --check && node scripts/build-inflections.ts --check && node scripts/check-content-boundary.ts",
+    "compile": "tsc --noEmit",
+    "test": "vitest run",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/chrome": "^0.3.5",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@wxt-dev/module-react": "^1.2.2",
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "^30.1.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4",
+    "wxt": "^0.21.4"
+  }
+}

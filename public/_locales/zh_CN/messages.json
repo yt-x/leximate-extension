@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "Leximate 词伴",
+    "description": "扩展名称"
+  },
+  "extDescription": {
+    "message": "本地离线词库的划词生词本：选中即查，生词与例句全部留在本地。",
+    "description": "扩展简介"
+  },
+  "actionTitle": {
+    "message": "打开 Leximate 管理台",
+    "description": "工具栏按钮的提示文字"
+  }
+}

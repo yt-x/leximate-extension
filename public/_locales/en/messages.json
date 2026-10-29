@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "Leximate",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "A vocabulary notebook with a bundled offline dictionary: select a word, keep it and its sentence, all locally.",
+    "description": "Extension description"
+  },
+  "actionTitle": {
+    "message": "Open the Leximate manager",
+    "description": "Toolbar button tooltip"
+  }
+}
